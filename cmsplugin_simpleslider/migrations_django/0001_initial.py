@@ -8,17 +8,17 @@ import filer.fields.image
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('filer', '__first__'),
         ('cms', '0003_auto_20140926_2347'),
+        ('filer', '__first__'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='Image',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('caption_text', models.CharField(max_length=255, null=True, blank=True, verbose_name='caption text')),
-                ('image', filer.fields.image.FilerImageField(related_name='image', to='filer.Image')),
+                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('caption_text', models.CharField(null=True, blank=True, verbose_name='caption text', max_length=255)),
+                ('image', filer.fields.image.FilerImageField(to='filer.Image', related_name='image')),
             ],
             options={
                 'verbose_name_plural': 'images',
@@ -28,11 +28,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Slider',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(serialize=False, parent_link=True, auto_created=True, primary_key=True, to='cms.CMSPlugin')),
-                ('name', models.CharField(max_length=50, null=True, blank=True, verbose_name='name')),
-                ('dots', models.BooleanField(default=False, verbose_name='dots')),
-                ('fade', models.BooleanField(default=False, verbose_name='fade')),
-                ('autoplay', models.BooleanField(default=True, verbose_name='autoplay')),
+                ('cmsplugin_ptr', models.OneToOneField(to='cms.CMSPlugin', serialize=False, primary_key=True, auto_created=True, parent_link=True)),
+                ('name', models.CharField(null=True, blank=True, verbose_name='name', max_length=50)),
+                ('dots', models.BooleanField(verbose_name='dots', default=False)),
+                ('fade', models.BooleanField(verbose_name='fade', default=False)),
+                ('autoplay', models.BooleanField(verbose_name='autoplay', default=True)),
             ],
             options={
                 'abstract': False,
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='image',
             name='slider',
-            field=models.ForeignKey(related_name='images', to='simple_slider.Slider'),
+            field=models.ForeignKey(to='cmsplugin_simpleslider.Slider', related_name='images'),
             preserve_default=True,
         ),
     ]
