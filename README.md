@@ -9,9 +9,9 @@ A djangocms carousel slider plugin.
 * add
 
   ```
-  filer,
-  easy_thumbnails,
-  cmsplugin_simpleslider,
+  'filer',
+  'easy_thumbnails',
+  'cmsplugin_simpleslider',
   ```
 
 to ``INSTALLED_APPS``.
