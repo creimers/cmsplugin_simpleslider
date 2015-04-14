@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'Slider'
         db.create_table(u'cmsplugin_simpleslider_slider', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=50, null=False, blank=False)),
             ('dots', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('fade', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('autoplay', self.gf('django.db.models.fields.BooleanField')(default=True)),

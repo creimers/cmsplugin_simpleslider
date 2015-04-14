@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             name='Slider',
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(to='cms.CMSPlugin', serialize=False, primary_key=True, auto_created=True, parent_link=True)),
-                ('name', models.CharField(null=True, blank=True, verbose_name='name', max_length=50)),
+                ('name', models.CharField(null=False, blank=False, verbose_name='name', max_length=50)),
                 ('dots', models.BooleanField(verbose_name='dots', default=False)),
                 ('fade', models.BooleanField(verbose_name='fade', default=False)),
                 ('autoplay', models.BooleanField(verbose_name='autoplay', default=True)),
