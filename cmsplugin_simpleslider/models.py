@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 @python_2_unicode_compatible
 class Slider(CMSPlugin):
 
-    name = models.CharField(_('name'), max_length=50, blank=True, null=True)
+    name = models.CharField(_('name'), max_length=50)
 
     dots = models.BooleanField(_('dots'), default=False)
 
