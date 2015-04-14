@@ -1,0 +1,11 @@
+#slider-wrapper{
+  margin-bottom: 40px;
+}
+
+.previous-arrow{
+  left: 40px;
+}
+
+.next-arrow{
+  right: 40px;
+}

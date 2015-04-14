@@ -1,0 +1,32 @@
+{% load sekizai_tags staticfiles thumbnail %}
+
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL  }}cmsplugin_simpleslider/bower_components/slick.js/slick/slick.css"/>{% endaddtoblock "css" %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL  }}cmsplugin_simpleslider/css/style.css"/>{% endaddtoblock "css" %}
+{% addtoblock "js" %}<script src="{{ STATIC_URL  }}cmsplugin_simpleslider/bower_components/jquery/dist/jquery.min.js"></script>{% endaddtoblock "js" %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL  }}cmsplugin_simpleslider/bower_components/slick.js/slick/slick.js"></script>{% endaddtoblock "js" %}
+
+<div id="slider-wrapper">
+  <div class="image-slider">
+    {% for image in images %}
+    <div class="single-image">
+      <img data-lazy="{% thumbnail image.image 2000x850 crop='True' upscale='True' %}">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.image-slider').slick({
+      lazyLoad: 'ondemand',
+      autoplay: {{autoplay|yesno:"true,false"}},
+      dots: {{dots|yesno:"true,false"}},
+      fade: {{fade|yesno:"true,false"}},
+      {% if fade %}
+      cssEase: 'linear',
+      {% endif %}
+    });
+  });
+</script>
+{% endaddtoblock "js" %}
