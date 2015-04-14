@@ -1,6 +1,5 @@
 dist
 *.egg
 *.egg-info
-dist
 build
 eggs
