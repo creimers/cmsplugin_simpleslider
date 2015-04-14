@@ -27,3 +27,10 @@ to ``INSTALLED_APPS``.
   )
   ```
 to ``settings.py``.
+
+* for django >= 1.7: add 
+
+  ```
+  'cmsplugin_simpleslider': 'cmsplugin_simpleslider.migrations_django',
+  ```
+  to ``MIGRATION_MODULES``.
