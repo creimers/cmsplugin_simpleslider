@@ -9,31 +9,31 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Slider'
-        db.create_table(u'simple_slider_slider', (
+        db.create_table(u'cmsplugin_simpleslider_slider', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
             ('dots', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('fade', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('autoplay', self.gf('django.db.models.fields.BooleanField')(default=True)),
         ))
-        db.send_create_signal(u'simple_slider', ['Slider'])
+        db.send_create_signal(u'cmsplugin_simpleslider', ['Slider'])
 
         # Adding model 'Image'
-        db.create_table(u'simple_slider_image', (
+        db.create_table(u'cmsplugin_simpleslider_image', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('slider', self.gf('django.db.models.fields.related.ForeignKey')(related_name='images', to=orm['simple_slider.Slider'])),
+            ('slider', self.gf('django.db.models.fields.related.ForeignKey')(related_name='images', to=orm['cmsplugin_simpleslider.Slider'])),
             ('image', self.gf('django.db.models.fields.related.ForeignKey')(related_name=u'image', to=orm['filer.Image'])),
             ('caption_text', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
         ))
-        db.send_create_signal(u'simple_slider', ['Image'])
+        db.send_create_signal(u'cmsplugin_simpleslider', ['Image'])
 
 
     def backwards(self, orm):
         # Deleting model 'Slider'
-        db.delete_table(u'simple_slider_slider')
+        db.delete_table(u'cmsplugin_simpleslider_slider')
 
         # Deleting model 'Image'
-        db.delete_table(u'simple_slider_image')
+        db.delete_table(u'cmsplugin_simpleslider_image')
 
 
     models = {
@@ -87,6 +87,21 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '255', 'db_index': 'True'})
         },
+        u'cmsplugin_simpleslider.image': {
+            'Meta': {'object_name': 'Image'},
+            'caption_text': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'image': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'image'", 'to': "orm['filer.Image']"}),
+            'slider': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'images'", 'to': u"orm['cmsplugin_simpleslider.Slider']"})
+        },
+        u'cmsplugin_simpleslider.slider': {
+            'Meta': {'object_name': 'Slider', '_ormbases': ['cms.CMSPlugin']},
+            'autoplay': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'dots': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'fade': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
+        },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
             'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
@@ -137,22 +152,7 @@ class Migration(SchemaMigration):
             'must_always_publish_author_credit': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'must_always_publish_copyright': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'subject_location': ('django.db.models.fields.CharField', [], {'default': 'None', 'max_length': '64', 'null': 'True', 'blank': 'True'})
-        },
-        u'simple_slider.image': {
-            'Meta': {'object_name': 'Image'},
-            'caption_text': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'image'", 'to': "orm['filer.Image']"}),
-            'slider': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'images'", 'to': u"orm['simple_slider.Slider']"})
-        },
-        u'simple_slider.slider': {
-            'Meta': {'object_name': 'Slider', '_ormbases': ['cms.CMSPlugin']},
-            'autoplay': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
-            'dots': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'fade': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
         }
     }
 
-    complete_apps = ['simple_slider']
+    complete_apps = ['cmsplugin_simpleslider']
