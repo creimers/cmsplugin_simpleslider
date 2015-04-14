@@ -7,6 +7,7 @@ A djangocms carousel slider plugin.
 * ``pip install git+ssh://git@github.com/creimers/cmsplugin_simpleslider.git``
 
 * add
+
   ```
   filer,
   easy_thumbnails,
@@ -16,6 +17,7 @@ A djangocms carousel slider plugin.
 to ``INSTALLED_APPS``.
 
 * add 
+
   ```
   THUMBNAIL_PROCESSORS = (
       'easy_thumbnails.processors.colorspace',
