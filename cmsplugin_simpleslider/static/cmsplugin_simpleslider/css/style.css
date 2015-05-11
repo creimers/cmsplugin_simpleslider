@@ -2,10 +2,10 @@
   margin-bottom: 40px;
 }
 
-.previous-arrow{
+.slick-prev{
   left: 40px;
 }
 
-.next-arrow{
+.slick-next{
   right: 40px;
 }
