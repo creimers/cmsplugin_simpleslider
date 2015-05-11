@@ -22,6 +22,7 @@ setup(
         'django-cms>=3.0',
         'django-filer',
         'cmsplugin_filer',
+        'django-admin-sortable',
     ],
     classifiers = [
         'Operating System :: OS Independent',
