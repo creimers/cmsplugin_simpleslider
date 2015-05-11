@@ -4,13 +4,15 @@ A djangocms carousel slider plugin.
 
 ## Installation
 
-* ``pip install git+ssh://git@github.com/creimers/cmsplugin_simpleslider.git``
+* ``pip install cmsplugin_simpleslider``
 
 * add
 
   ```
   'filer',
   'easy_thumbnails',
+  'cmsplugin_filer_image',
+  'django-admin-sortable',
   'cmsplugin_simpleslider',
   ```
 
@@ -31,6 +33,8 @@ to ``settings.py``.
 * for django >= 1.7: add 
 
   ```
+  'filer': 'filer.migrations_django',
+  'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
   'cmsplugin_simpleslider': 'cmsplugin_simpleslider.migrations_django',
   ```
   to ``MIGRATION_MODULES``.
