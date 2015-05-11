@@ -1,0 +1,22 @@
+# Config file for automatic testing at travis-ci.org
+
+language: python
+
+python:
+  - 2.7
+  - 3.4
+
+env:
+  matrix:
+    - DJANGO=1.7.7
+    - DJANGO=1.8.1
+
+install:
+  - pip install -r test-requirements.txt
+  - pip install -q Django==$DJANGO
+  - python setup.py -q install
+
+script: 
+  - coverage run $(which djangocms-helper) cmsplugin_simpleslider test --cms
+
+after_success: coveralls

@@ -1,0 +1,5 @@
+[run]
+source = cmsplugin_simpleslider
+
+[report]
+omit = ../*tests*
