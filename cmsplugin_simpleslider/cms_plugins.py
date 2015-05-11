@@ -5,6 +5,8 @@ from cms.plugin_base import CMSPluginBase
 from django.contrib import admin
 
 from django.utils.translation import ugettext as _
+from adminsortable.admin import SortableStackedInline
+from adminsortable.admin import SortableAdmin
 
 from .models import (
     Slider,
@@ -12,12 +14,12 @@ from .models import (
 )
 
 
-class ImageInline(admin.StackedInline):
+class ImageInline(SortableStackedInline):
     model = Image
     extra = 1
 
 
-class SliderPlugin(CMSPluginBase):
+class SliderPlugin(CMSPluginBase, SortableAdmin):
 
     model = Slider
     name = _("Simple Slider")

@@ -1,19 +1,22 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from filer.fields.image import FilerImageField
-from cms.models import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
+
+from cms.models import CMSPlugin
+
+from filer.fields.image import FilerImageField
+
+from adminsortable.models import Sortable
 
 
 @python_2_unicode_compatible
-class Slider(CMSPlugin):
+class Slider(CMSPlugin, Sortable):
+    class Meta(Sortable.Meta):
+        pass
 
-    name = models.CharField(_('name'), max_length=50)
-
+    name = models.CharField(_('name'), max_length=50, blank=True, null=True)
     dots = models.BooleanField(_('dots'), default=False)
-
     fade = models.BooleanField(_('fade'), default=False)
-
     autoplay = models.BooleanField(_('autoplay'), default=True)
 
     def copy_relations(self, oldinstance):
@@ -30,10 +33,11 @@ class Slider(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Image(models.Model):
+class Image(Sortable):
 
-    class Meta:
+    class Meta(Sortable.Meta):
         verbose_name_plural = _('images')
+        pass
 
     slider = models.ForeignKey(
         Slider,
