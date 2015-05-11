@@ -17,10 +17,11 @@ setup(
     author_email = 'christoph@superservice-international.com',
     license='BSD License',
     url = 'https://github.com/creimers/cmsplugin_simpleslider',
-    keywords = ['djangocms', 'django', 'carousel',], 
+    keywords = ['djangocms', 'django', 'carousel', 'slider'], 
     install_requires = [
         'django-cms>=3.0',
         'django-filer',
+        'cmsplugin_filer',
     ],
     classifiers = [
         'Operating System :: OS Independent',
