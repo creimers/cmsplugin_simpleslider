@@ -31,10 +31,10 @@ class SliderPlugin(CMSPluginBase, SortableAdmin):
         context.update({
             'images': images
         })
-
         context["dots"] = instance.dots
         context["fade"] = instance.fade
         context["autoplay"] = instance.autoplay
+        context["options"] = instance.get_image_options
 
         return context
 

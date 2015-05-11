@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -6,7 +7,11 @@ from cms.models import CMSPlugin
 
 from filer.fields.image import FilerImageField
 
+from cmsplugin_filer_image.models import ThumbnailOption
+
 from adminsortable.models import Sortable
+
+from .settings import get_settings
 
 
 @python_2_unicode_compatible
@@ -18,12 +23,25 @@ class Slider(CMSPlugin, Sortable):
     dots = models.BooleanField(_('dots'), default=False)
     fade = models.BooleanField(_('fade'), default=False)
     autoplay = models.BooleanField(_('autoplay'), default=True)
+    image_options = models.ForeignKey(
+        ThumbnailOption,
+        verbose_name=_('image size'),
+        related_name='djangocms_blog_post_thumbnail',
+        on_delete=models.SET_NULL,
+        blank=True, null=True
+    )
 
     def copy_relations(self, oldinstance):
         for image in oldinstance.images.all():
             image.pk = None
             image.slider = self
             image.save()
+
+    def get_image_options(self):
+        if self.image_options_id:
+            return self.image_options.as_dict
+        else:
+            return get_settings('SLIDER_IMAGE_OPTIONS')
 
     def __str__(self):
         if self.name:
