@@ -1,3 +1,11 @@
+[![Build Status](https://travis-ci.org/creimers/cmsplugin_simpleslider.svg?branch=master)](https://travis-ci.org/creimers/cmsplugin_simpleslider)
+[![Coverage Status](https://coveralls.io/repos/creimers/cmsplugin_simpleslider/badge.svg?branch=develop)](https://coveralls.io/r/creimers/cmsplugin_simpleslider?branch=develop)
+[![Code Climate](https://codeclimate.com/github/creimers/cmsplugin_simpleslider/badges/gpa.svg)](https://codeclimate.com/github/creimers/cmsplugin_simpleslider)
+[![Requirements Status](https://requires.io/github/creimers/cmsplugin_simpleslider/requirements.svg?branch=master)](https://requires.io/github/creimers/cmsplugin_simpleslider/requirements/?branch=master)
+<!--[![Latest Version](https://pypip.in/version/cmsplugin_simpleslider/badge.svg)](https://pypi.python.org/pypi/cmsplugin-simpleslider/)-->
+<!--[![Supported Python versions](https://pypip.in/py_versions/cmsplugin_simpleslider/badge.svg)](https://pypi.python.org/pypi/cmsplugin-simpleslider/)-->
+<!--[![Development Status](https://pypip.in/status/cmsplugin_simpleslider/badge.svg)](https://pypi.python.org/pypi/cmsplugin_simpleslider/)-->
+
 # djangocms slider plugin
 
 A djangocms carousel slider plugin.
