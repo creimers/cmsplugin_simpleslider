@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/creimers/cmsplugin_simpleslider.svg?branch=master)](https://travis-ci.org/creimers/cmsplugin_simpleslider)
-[![Coverage Status](https://coveralls.io/repos/creimers/cmsplugin_simpleslider/badge.svg?branch=develop)](https://coveralls.io/r/creimers/cmsplugin_simpleslider?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/creimers/cmsplugin_simpleslider/badge.svg?branch=master)](https://coveralls.io/r/creimers/cmsplugin_simpleslider?branch=master)
 [![Code Climate](https://codeclimate.com/github/creimers/cmsplugin_simpleslider/badges/gpa.svg)](https://codeclimate.com/github/creimers/cmsplugin_simpleslider)
 [![Requirements Status](https://requires.io/github/creimers/cmsplugin_simpleslider/requirements.svg?branch=master)](https://requires.io/github/creimers/cmsplugin_simpleslider/requirements/?branch=master)
 <!--[![Latest Version](https://pypip.in/version/cmsplugin_simpleslider/badge.svg)](https://pypi.python.org/pypi/cmsplugin-simpleslider/)-->
@@ -47,5 +47,7 @@ to ``settings.py``.
   ```
 
   to ``MIGRATION_MODULES``.
+
+* sync the database
 
   Also check the django migration settings of [filer](https://github.com/stefanfoulis/django-filer#django-17).
