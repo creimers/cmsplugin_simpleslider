@@ -26,7 +26,7 @@ HELPER_SETTINGS = {
                 'redirect_on_fallback': True,
                 'hide_untranslated': False,
                 'name': gettext('en'),
-                'code': 'de',
+                'code': 'en',
                 'public': True,
             },
         ],
