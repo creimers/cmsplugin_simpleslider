@@ -9,8 +9,9 @@ HELPER_SETTINGS = {
         '-s',
     ],
     'INSTALLED_APPS': [
-        'adminsortable',
         'filer',
+        'easy_thumbnails',
+        'adminsortable',
         'cmsplugin_filer_image',
         'cmsplugin_simpleslider',
     ],
@@ -45,5 +46,11 @@ HELPER_SETTINGS = {
     },
     'TEMPLATE_CONTEXT_PROCESSORS': {
         'django.core.context_processors.static'
+    },
+    'THUMBNAIL_PROCESSORS' = {
+        'easy_thumbnails.processors.colorspace',
+        'easy_thumbnails.processors.autocrop',
+        'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+        'easy_thumbnails.processors.filters',
     }
 }
