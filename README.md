@@ -8,7 +8,7 @@
 
 # djangocms slider plugin
 
-A djangocms carousel slider plugin.
+A djangocms carousel slider plugin based on [slick](http://kenwheeler.github.io/slick/). Requires django>=1.7.
 
 
 ## Installation
@@ -39,7 +39,7 @@ to ``INSTALLED_APPS``.
   ```
 to ``settings.py``.
 
-* for django >= 1.7: add 
+* add 
 
   ```
   'filer': 'filer.migrations_django',
@@ -49,5 +49,3 @@ to ``settings.py``.
   to ``MIGRATION_MODULES``.
 
 * sync the database
-
-  Also check the django migration settings of [filer](https://github.com/stefanfoulis/django-filer#django-17).
