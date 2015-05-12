@@ -47,7 +47,7 @@ HELPER_SETTINGS = {
     'TEMPLATE_CONTEXT_PROCESSORS': {
         'django.core.context_processors.static'
     },
-    'THUMBNAIL_PROCESSORS' = {
+    'THUMBNAIL_PROCESSORS': {
         'easy_thumbnails.processors.colorspace',
         'easy_thumbnails.processors.autocrop',
         'filer.thumbnail_processors.scale_and_crop_with_subject_location',
