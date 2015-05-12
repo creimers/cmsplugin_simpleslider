@@ -43,4 +43,7 @@ HELPER_SETTINGS = {
         'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
         'cmsplugin_simpleslider': 'cmsplugin_simpleslider.migrations_django',
     },
+    'TEMPLATE_CONTEXT_PROCESSORS': {
+        'django.core.context_processors.static'
+    }
 }
