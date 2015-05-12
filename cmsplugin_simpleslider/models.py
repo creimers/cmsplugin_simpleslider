@@ -47,7 +47,7 @@ class Slider(CMSPlugin, Sortable):
         if self.name:
             return self.name
         else:
-            return self.pk
+            return 'sortable slider'
 
 
 @python_2_unicode_compatible
