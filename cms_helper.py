@@ -9,6 +9,9 @@ HELPER_SETTINGS = {
         '-s',
     ],
     'INSTALLED_APPS': [
+        'filer',
+        'cmsplugin_filer_image',
+        'adminsortable',
         'cmsplugin_simpleslider',
     ],
     'LANGUAGE_CODE': 'en',
@@ -36,6 +39,8 @@ HELPER_SETTINGS = {
         'django.contrib.messages.middleware.MessageMiddleware',
     ],
     'MIGRATION_MODULES': {
+        'filer': 'filer.migrations_django',
+        'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
         'cmsplugin_simpleslider': 'cmsplugin_simpleslider.migrations_django',
     },
 }
