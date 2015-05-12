@@ -44,8 +44,8 @@ to ``settings.py``.
   ```
   'filer': 'filer.migrations_django',
   'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-  'cmsplugin_simpleslider': 'cmsplugin_simpleslider.migrations_django',
   ```
+
   to ``MIGRATION_MODULES``.
 
-  Also check the django 1.7 settings of [filer](https://github.com/stefanfoulis/django-filer#django-17).
+  Also check the django migration settings of [filer](https://github.com/stefanfoulis/django-filer#django-17).
