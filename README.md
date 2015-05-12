@@ -10,6 +10,7 @@
 
 A djangocms carousel slider plugin.
 
+
 ## Installation
 
 * ``pip install cmsplugin_simpleslider``
