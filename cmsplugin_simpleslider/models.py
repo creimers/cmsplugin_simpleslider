@@ -26,7 +26,7 @@ class Slider(CMSPlugin, Sortable):
     image_options = models.ForeignKey(
         ThumbnailOption,
         verbose_name=_('image size'),
-        related_name='djangocms_blog_post_thumbnail',
+        related_name='cmsplugin_simpleslider_image_options',
         on_delete=models.SET_NULL,
         blank=True, null=True
     )
