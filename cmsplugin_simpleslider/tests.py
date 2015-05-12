@@ -4,13 +4,12 @@ from django.contrib.auth.models import User
 
 from django.core.files.uploadedfile import SimpleUploadedFile
 from filer.models import Image
+from cmsplugin_filer_image.models import ThumbnailOption
 
 from cms import api
 from cms.models import CMSPlugin
 from cms.test_utils.testcases import BaseCMSTestCase
 from cms.utils import get_cms_setting
-
-from PIL import Image as PilImage, ImageDraw
 
 from . import models
 from . import cms_plugins
@@ -41,6 +40,11 @@ class SimpleSliderTestCase(TestCase, BaseCMSTestCase):
             name='affe'
         )
 
+        image_options = ThumbnailOption.objects.create(
+            name='base', width=100, height=100, crop=True, upscale=False
+        )
+        slider_plugin.image_options = image_options
+
         image_file = SimpleUploadedFile(
             'affe.jpg', b'affe', content_type="image/jpeg")
         img1 = Image.objects.create(
@@ -53,9 +57,13 @@ class SimpleSliderTestCase(TestCase, BaseCMSTestCase):
         image1.slider = slider_plugin
         image1.save()
 
+        self.assertTrue(image1.__str__() == 'affe.jpg')
+
         image2 = models.Image(image=img2)
         image2.slider = slider_plugin
         image2.save()
+
+        self.assertTrue(image2.__str__() == 'affe2.jpg')
 
         self.assertTrue(slider_plugin.__str__() == 'affe')
         self.assertTrue(
