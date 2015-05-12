@@ -21,7 +21,7 @@ A djangocms carousel slider plugin.
   'filer',
   'easy_thumbnails',
   'cmsplugin_filer_image',
-  'django-admin-sortable',
+  'adminsortable',
   'cmsplugin_simpleslider',
   ```
 
