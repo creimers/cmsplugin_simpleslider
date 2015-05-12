@@ -9,9 +9,9 @@ HELPER_SETTINGS = {
         '-s',
     ],
     'INSTALLED_APPS': [
+        'adminsortable',
         'filer',
         'cmsplugin_filer_image',
-        'adminsortable',
         'cmsplugin_simpleslider',
     ],
     'LANGUAGE_CODE': 'en',
