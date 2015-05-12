@@ -7,9 +7,7 @@ python:
   - 3.4
 
 env:
-  matrix:
-    - DJANGO=1.7.7
-    - DJANGO=1.8.1
+  - DJANGO=1.7.7
 
 install:
   - pip install -r test-requirements.txt
