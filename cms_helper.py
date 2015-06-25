@@ -40,7 +40,6 @@ HELPER_SETTINGS = {
         'django.contrib.messages.middleware.MessageMiddleware',
     ],
     'MIGRATION_MODULES': {
-        'filer': 'filer.migrations_django',
         'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
     },
     'TEMPLATE_CONTEXT_PROCESSORS': {
