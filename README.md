@@ -39,13 +39,4 @@ to ``INSTALLED_APPS``.
   ```
 to ``settings.py``.
 
-* add 
-
-  ```
-  'filer': 'filer.migrations_django',
-  'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-  ```
-
-  to ``MIGRATION_MODULES``.
-
 * sync the database
