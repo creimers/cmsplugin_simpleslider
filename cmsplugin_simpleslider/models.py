@@ -66,11 +66,10 @@ class Image(Sortable):
         related_name=_('image'),
     )
 
-    caption_text = models.CharField(
+    caption_text = models.TextField(
         _('caption text'),
         null=True,
         blank=True,
-        max_length=255
     )
 
     def __str__(self):
