@@ -10,9 +10,11 @@
     <div class="single-image">
       {% thumbnail image.image options.size crop=options.crop upscale=options.upscale as thumb %}
       <img data-lazy="{{thumb.url}}" class="img-responsive">
-      <div class="slider-caption-text">
-        {{image.caption_text|linebreaks}}
-      </div>
+      {% if image.caption_text %}
+        <div class="slider-caption-text">
+          {{image.caption_text|linebreaks}}
+        </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>

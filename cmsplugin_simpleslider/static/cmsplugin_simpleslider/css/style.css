@@ -16,6 +16,7 @@
   bottom: 10%;
   margin-left: 2%;
   padding: 15px;
+  max-width: 60vw;
 }
 
 .slider-caption-text > p{
