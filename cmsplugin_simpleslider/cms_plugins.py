@@ -27,7 +27,7 @@ class SliderPlugin(CMSPluginBase, SortableAdmin):
     inlines = [ImageInline, ]
 
     def render(self, context, instance, placeholder):
-        images = instance.slider.images.all()
+        images = instance.images.all()
         context.update({
             'images': images
         })
