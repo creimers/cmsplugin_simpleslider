@@ -20,8 +20,8 @@ setup(
     keywords = ['djangocms', 'django', 'carousel', 'slider'], 
     install_requires = [
         'django-cms>=3.0',
-        'django-filer==0.9.11',
-        'cmsplugin_filer==0.10.1',
+        'django-filer==1.0.4',
+        'cmsplugin_filer==1.0.0',
         'django-admin-sortable',
     ],
     classifiers = [
