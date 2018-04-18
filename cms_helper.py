@@ -39,12 +39,9 @@ HELPER_SETTINGS = {
     'MIDDLEWARE_CLASSES': [
         'django.contrib.messages.middleware.MessageMiddleware',
     ],
-    'MIGRATION_MODULES': {
-        'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-    },
-    'TEMPLATE_CONTEXT_PROCESSORS': {
-        'django.core.context_processors.static'
-    },
+    #  'TEMPLATE_CONTEXT_PROCESSORS': {
+        #  'django.core.context_processors.static'
+    #  },
     'THUMBNAIL_PROCESSORS': (
         'easy_thumbnails.processors.colorspace',
         'easy_thumbnails.processors.autocrop',

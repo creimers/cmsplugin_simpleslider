@@ -4,10 +4,10 @@ language: python
 
 python:
   - 2.7
-  - 3.4
+  - 3.6
 
 env:
-  - DJANGO=1.7.7
+  - DJANGO=1.11.11
 
 install:
   - pip install -r test-requirements.txt
